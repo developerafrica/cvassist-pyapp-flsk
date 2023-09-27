@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
+    {%block styleblock%}{%endblock%}
+    {%block scriptblock%}{%endblock%}
+    <title>{%block title%}{%endblock%}</title>
+</head>
+<body>
+    <article class="base_layout">
+        <header class="navigation">
+            <nav>
+                <section>
+                    <h1><a href="/">DEVELOPER AFRICA MW</a></h1>
+                </section>
+                <section>
+                    <ul>
+                        <li><a href="/docs">docs</a></li>
+                        {%if user.is_authenticated %}
+                        <li><a href="/profile">profile</a></li>
+                        <li class="logout"><a href="/auth/logout">logout</a></li>
+                        {%else%}
+                        <li><a href="/auth/login">login</a></li>
+                        <li class="signup"><a href="/auth/signup">sign up</a></li>
+                        {%endif%}
+                    </ul>
+                </section>
+            </nav>
+        </header>
+        <main class="content">
+            {%block bodyslot%}
+            {%endblock%}
+        </main>
+    </article>
+    <div class="bg"></div>    
+</body>
+</html>

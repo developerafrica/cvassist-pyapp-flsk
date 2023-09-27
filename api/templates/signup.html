@@ -1,0 +1,16 @@
+{%extends "form_page.html"%}
+
+{%block formslot%}
+<article class="login_form">
+    <form method="POST">
+        <div class="form_group"><label for="name">name</label><input required type="text" name="name" id="name"></div>
+        <div class="form_group"><label for="name">email</label><input required type="email" name="email" id="email"></div>
+        <div class="form_group"><label for="password">password</label><input required type="password" name="password" id="password"></div>
+        <div class="form_group"><label for="password">confirm password</label><input required type="password" name="confirm" id="confirm"></div>
+        <div class="form_group"><button type="submit" id="submit">SIGN UP</button></div>
+    </form>
+    <footer>
+        <p>Already have an account ? <a href="/auth/login"> log in</a></p>
+    </footer>
+</article>
+{%endblock%}

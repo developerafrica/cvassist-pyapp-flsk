@@ -1,0 +1,152 @@
+:root{
+    --grn: #113C11;
+    --trans-grn: hsla(120, 56%, 15%, 0.463);
+    --wht: hsl(0, 0%, 100%);
+    --bl: #1492E6;
+    --wtxt: white;
+    --btxt: #333333;
+    --drop: #408840;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body{
+    background: var(--wht);
+    height: 100%;
+    width: 100%;
+}
+a{
+    text-decoration: none;
+}
+ul li{
+    list-style: none;
+}
+
+/* layout_styles */
+
+body .bg{
+    position: absolute;
+    right: 10vw;
+    top: 10vh;
+    width: 150px;
+    height: 150px;
+    background-color: var(--drop);
+    z-index: -1;
+}
+body .bg:before{
+    position: absolute;
+    content: "";
+    background-color: var(--drop);
+    right:10vw;
+    top: 60vh;
+    width: 200px;
+    height: 200px;
+    z-index: -1;
+}
+body .bg:after{
+    position: absolute;
+    content: "";
+    background-color: var(--drop);
+    right:30vw;
+    top: 30vh;
+    width: 120px;
+    height: 120px;
+    z-index: -1;
+}
+body .base_layout{
+    backdrop-filter: blur(1.8rem);
+    background: rgba(255, 255, 255, 0.17);
+}
+body .base_layout .navigation{
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+}
+body .base_layout .navigation nav{
+    background-color: var(--wht);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1100px;
+    margin: 1rem auto 0 auto;
+    padding: 0.4rem;
+    box-shadow: rgba(0, 0, 0, 0.113) 0 4px 4px 0;
+    
+}
+body .base_layout .navigation nav section h1 a{ 
+    display: block;
+    font-size: 13px;
+    letter-spacing: 1.2px;
+    color: var(--btxt);
+}
+body .base_layout .navigation nav section ul{ 
+    display: flex;
+    align-items: center;
+    gap: 2.3rem;
+}
+body .base_layout .navigation nav section ul .logout{
+    border: var(--bl) solid 1px;
+    border-radius: 4px;
+    padding: 0.3rem 1rem;
+}
+body .base_layout .navigation nav section ul .signup{
+    background-color: var(--bl);
+    border-radius: 5px;
+    padding: 0.3rem 1rem;
+}
+body .base_layout .navigation nav section ul li a{
+    display: block;
+    padding: 0.2rem;
+    color: var(--btxt);
+    text-transform: uppercase;
+    font-size: 12px;
+    
+}
+body .base_layout .navigation nav section ul .signup a{
+    color: var(--wtxt);
+    font-weight: 700;
+}
+body .base_layout .content{
+    height: 100vh;
+    margin: auto;
+    max-width: 890px;
+}
+/* form_styling */
+.login_form form .form_group{
+    display: grid;
+    margin: 1rem;
+    
+}
+.login_form form .form_group label{
+    font-size: 11.6px;
+    padding: 0.2rem;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+}
+.login_form form .form_group input{
+    padding: 10px 20px;
+    border: var(--grn) solid 1px;
+    border-radius: 4px;
+    font-size: 13px;
+}
+.login_form form .form_group button[type="submit"]{
+    padding: 10px 20px;
+    font-size: 13px;
+    background-color: var(--bl);
+    border: none;
+    border-radius: 4px;
+    color: var(--wtxt);
+}
+.login_form footer p{
+    text-align: center;
+    font-size: 13px;
+}
+.login_form footer p a{
+    text-transform: uppercase;
+    color: var(--bl);
+    font-weight: 700;
+}

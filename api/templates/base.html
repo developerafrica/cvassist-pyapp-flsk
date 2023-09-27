@@ -1,0 +1,50 @@
+{%extends "layout.html"%}
+{%block styleblock%}
+<style>
+    .base{
+        height: 100%;
+    }
+    .base .base_layout{
+        padding: 15vh 0 0 0;
+        height: 100%;
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr 4fr;
+    }
+    .base .base_layout section{
+        background: transparent;
+    }
+    .base .base_layout section nav ul li {
+        margin: 0 5px 20px 0;
+    }
+    .base .base_layout section nav ul li a{
+        display: block;
+        padding: 5px 10px;
+        border-left: var(--bl) solid 1px;
+        font-size: 13px;
+        text-transform: uppercase;
+        color: var(--btxt);
+    }
+    
+</style>
+{%block basestyle%}{%endblock%}
+{%endblock%}
+{%block bodyslot%}
+<article class="base">
+    <div class="base_layout">
+        <section>
+            <nav>
+                <ul>
+                    {%if user.is_authenticated %}
+                    <li><a href="/profile">profile</a></li>
+                    {%endif%}
+                    <li><a href="/docs">docs</a></li>
+                </ul>
+            </nav>
+        </section>
+        <section>
+            {%block baseextends%}{%endblock%}
+        </section>
+    </div>
+</article>
+{%endblock%}

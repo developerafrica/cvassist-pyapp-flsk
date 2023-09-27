@@ -1,0 +1,154 @@
+{%extends "layout.html"%}
+{%block styleblock%}
+<style>
+    .index{
+        height: 100%;
+    }
+    .index .index_landing{
+        height: 100%;
+        display: grid;
+        grid-template-rows: 1fr auto;
+    }
+    .index .index_landing main{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+   .index .index_landing main section .main_text section h1{
+        color: var(--btxt);
+        font-size: 35px;
+        padding: 0.5rem 0;
+        letter-spacing: 1.1px;
+        
+    }
+    .index .index_landing main section .main_text section:nth-child(2){
+        border-left: var(--grn) solid 1px;
+        margin: 1.3rem 0;
+        padding: 0 0.5rem;
+        color: var(--btxt);
+        font-size: 15px;
+    }
+    .index .index_landing main section .main_text section:nth-child(2) p{
+        padding: 0.6rem 0;
+    }
+    .index .index_landing main section .main_text section a{
+        display: inline-block;
+        padding: 0.7rem 1.2rem 0.7rem 0.8rem;
+        margin: 0.5rem 0;
+        border-radius: 4px;
+        background-color: var(--grn);
+        color: var(--wtxt);
+        font-size: 13px;
+        text-transform: uppercase;
+    }
+    .index .index_landing main section .image {
+        width: 300px;
+        height: 300px;
+        border-radius: 100%;
+        background-color: var(--grn);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .index .index_landing footer{
+        background-image: url("{{url_for('static', filename='world.png')}}");
+        background-size: cover;
+        background-position: center;
+        background-repeat: repeat;
+        height: 25vh;
+    }
+    .index .index_landing footer .foot{
+        height: 100%;
+        padding: 1rem 0;
+        display: grid;
+        grid-template-rows: 1fr auto;
+    }
+    .index .index_landing footer .foot section h1{
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        font-size: 13px;
+        font-weight: 560;
+        color: var(--btxt);
+    }
+    .index .index_landing footer .foot section h1 a{
+        display:block;
+        font-size: 13px;
+        background-color: var(--trans-grn);
+        color: var(--wtxt);
+        padding: 5px;
+        margin: 0 3px;
+        border-radius: 4px;
+        letter-spacing: 1.1px;
+        
+    }
+    .index .index_landing footer .foot section h1 a span svg{
+        width: 18px;
+        padding: 0 3px;
+    }
+    .index .index_landing footer .foot section:nth-child(2){
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .index .index_landing footer .foot section:nth-child(2) article{
+        background-color: var(--wtxt);
+        border: black solid 1px;
+        border-radius: 4px;
+    }
+    .index .index_landing footer .foot section:nth-child(2) article a{
+        color: #333;
+        padding: 0.6rem;
+        font-size: 13px;
+        text-transform: uppercase;
+        display: block;     
+        
+    }
+    .index .index_landing footer .foot section:nth-child(2) article a span{
+        padding: 10px;
+    }
+    
+    </style>
+{%endblock%}
+{%block bodyslot%}
+<article class="index">
+    <div class="index_landing">
+        <main>
+            <section>
+                <div class="main_text">
+                    <section>
+                        <h1>AGRICULTURE JOBS API</h1>
+                    </section>
+                    <section>
+                        <p>welcome to agri jobs API</p>
+                        <p>Discover and connect with Malawian jobs</p>
+                    </section>
+                    <section>
+                        <a href="/docs">
+                            <p>get started &rarr;</p>
+                        </a>
+                    </section>
+                </div>
+            </section>
+            <section>
+                <div class="image">
+                    <img src="{{url_for('static', filename='logo.png')}}" alt="logo">
+                </div>
+            </section>
+        </main>
+        <footer>
+            <hr>
+            <div class="foot">
+                <section>
+                    <h1>created with love by <a href="http://butaopeter.netlify.app"><span>PETER BUTAO | DEVELOPER AFRICA MW</span></a></h1>
+                </section>
+                <section>
+                    <span><article><a href="https://github.com/devafricamw"><span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19.505" viewBox="0 0 20 19.505"><path d="M12,2A10,10,0,0,0,8.839,21.489c.5.09.682-.218.682-.484,0-.236-.009-.866-.014-1.7-2.782.6-3.369-1.34-3.369-1.34A2.653,2.653,0,0,0,5.028,16.5c-.909-.62.069-.608.069-.608a2.1,2.1,0,0,1,1.532,1.03,2.129,2.129,0,0,0,2.91.833,2.137,2.137,0,0,1,.635-1.337c-2.22-.251-4.555-1.111-4.555-4.943a3.86,3.86,0,0,1,1.03-2.682,3.593,3.593,0,0,1,.1-2.646s.84-.269,2.75,1.025a9.485,9.485,0,0,1,5.008,0c1.909-1.294,2.748-1.025,2.748-1.025a3.594,3.594,0,0,1,.1,2.646,3.859,3.859,0,0,1,1.026,2.682c0,3.841-2.337,4.687-4.565,4.935a2.381,2.381,0,0,1,.679,1.852c0,1.335-.012,2.415-.012,2.741,0,.269.18.579.688.481A10,10,0,0,0,12,2Z" transform="translate(-2 -2)" fill="#35393b"/></svg>
+                    </span><span>github repo</span></a></article></span><span>all code solutions african</span>
+                </section>
+            </div>
+        </footer>
+    </div>
+</article>
+{%endblock%}

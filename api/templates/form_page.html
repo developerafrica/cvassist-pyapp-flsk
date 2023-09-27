@@ -1,0 +1,64 @@
+{%extends "layout.html"%}
+{%block scriptblock%}
+<script defer src="{{url_for('static', filename='form.js')}}"></script>
+{%endblock%}
+{%block styleblock%}
+<style>
+    .form_page{
+        height: 100%;
+        display: grid;
+        grid-template-rows: 1fr auto;
+    }
+    .form_page main{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+    }
+    .form_page main section .image{
+        background-color: var(--trans-grn);
+        padding: 3rem;
+        border-radius: 100%;
+        
+        
+    }
+    .form_page main section:nth-child(2){
+        width: 50%;
+        padding: 2rem;
+    }
+    .form_page footer p{
+        margin: 1.5rem;
+        text-align: center;
+        font-size: 0.9rem;
+        color: var(--btxt);
+    }
+    .form_page footer p a{
+        color: var(--bl);
+        font-weight: 700;
+    }
+</style>
+{%endblock%}
+
+{%block bodyslot%}
+<article class="form_page">
+    
+    <main>
+        <section>
+            <div class="image">
+               <img width="200px" src="{{url_for('static', filename='greenlogo.png')}}" alt="logo" >
+            </div>
+        </section>
+        <section>
+            <div class="form_extends">
+                {%block formslot%}
+                {%endblock%}
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="text">
+            <p>created with love by <a href="http://butaopeter.netlify.app">PETER BUTAO | DEVELOPER AFRICA MW</a></p>
+        </div>
+    </footer>
+</article>
+{%endblock%}
